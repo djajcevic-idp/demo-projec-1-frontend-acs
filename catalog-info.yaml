@@ -1,0 +1,24 @@
+#$schema: https://json.schemastore.org/catalog-info.json
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: demo-projec-1-frontend
+  annotations:
+    github.com/project-slug: djajcevic-idp/demo-projec-1-frontend-acs
+    backstage.io/environment: dev
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/name=demo-projec-1-frontend'
+    argocd/app-name: demo-projec-1-frontend
+  tags:
+    - react
+    - js
+  links:
+    - url: https://demo-projec-1-frontend.apps.idp.dhl.com
+      title: Website
+      icon: star
+spec:
+  type: website
+  lifecycle: development
+  owner: demo-team
+  system: demo
+  dependsOn:
+    - component:default/demo-projec-1
